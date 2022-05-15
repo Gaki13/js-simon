@@ -12,3 +12,11 @@ function getRndInteger(min, max) {
 /*-------------------------
     MAIN
 --------------------------*/
+const numbersRandom = [];
+// genero 5 numeri casuali e li inserisco nell'array numbersRandom
+while(numbersRandom.length < 5) {
+    const number = getRndInteger(1, 100);
+    if(!numbersRandom.includes(number)) {
+        numbersRandom.push(number);
+    }
+}
