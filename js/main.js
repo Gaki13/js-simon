@@ -29,7 +29,7 @@ numbersHtml.innerHTML = numbersRandom;
 // nascondere i numeri
 setTimeout(function() {
     numbersHtml.innerHTML = "";
-}, (timer - 1) * 1000); // 2000
+}, (timer - 1) * 3000); // 2000
 
 // Dopo 30 secondi l'utente deve inserire, i numeri che ha visto precedentemente, tramite il prompt().
 setTimeout(function() {
@@ -56,4 +56,4 @@ setTimeout(function() {
     } else {
         alert('Sei scarso! riprova! 😅');
     }
-}, timer * 1000);
+}, timer * 3000);
