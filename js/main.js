@@ -15,6 +15,7 @@ function getRndInteger(min, max) {
 const numbersHtml = document.querySelector(".numbers");
 const timer = 3; // 3 secondi
 const numbersRandom = [];
+
 // genero 5 numeri casuali e li inserisco nell'array numbersRandom
 while(numbersRandom.length < 5) {
     const number = getRndInteger(1, 100);
@@ -37,4 +38,22 @@ setTimeout(function() {
         const number = Number(prompt("Inserisci un numero che hai visto in precendenza"));
         userNumbers.push(number);
     }
-}
+
+
+    // il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+    const numbersCheck = []; // array numeri indovinati
+    for(let i = 0; i < userNumbers.length; i++) {
+        const number = userNumbers[i];
+        // SE il numero è presente nell'array numbersRandom e NON è incluso nell'array numbersCheck, lo aggiungo all'array numbersCheck
+        if(numbersRandom.includes(number) && !numbersCheck.includes(number)) {
+            numbersCheck.push(number);
+        }
+    }
+
+      // stampo il risultato
+      if(numbersCheck.length > 0) {
+        alert(`Hai indovinato ${numbersCheck.length} numeri (${numbersCheck})`);
+    } else {
+        alert('Sei scarso! riprova! 😅');
+    }
+}, timer * 1000);
